@@ -20,7 +20,7 @@ void printPrimeFactors(int n)
 	int divider = 2;
 	bool finished = false;
 
-	while (divider <= n / 2)
+	while (divider <= n)
 	{
 		int exp = 0;
 		while (n%divider == 0)
@@ -28,10 +28,10 @@ void printPrimeFactors(int n)
 			exp++;
 			n = n / divider;
 		}
-		if (exp > 0)
-			cout << divider << "^" << exp << endl;
-
-		while (!isPrime(++divider));
+		if (exp>0)
+		    cout << divider << "^" << exp << endl;
+        
+    	while (!isPrime(++divider));
 		exp = 0;
 
 	}
@@ -39,5 +39,5 @@ void printPrimeFactors(int n)
 
 int main()
 {
-	printPrimeFactors(2000);
+	printPrimeFactors(48);
 }
